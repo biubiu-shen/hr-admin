@@ -35,6 +35,14 @@ module.exports = {
     overlay: {
       warnings: false,
       errors: true
+    },
+    proxy: {
+      // 反向代理开启
+      '/shen': {
+        target: 'http://ihrm.itheima.net/',
+        changeOrigin: true,
+        pathRewrite: { '^/shen': '' }
+      }
     }
     // 不用到mock就不需要打开这一行
     // before: require('./mock/mock-server.js')
